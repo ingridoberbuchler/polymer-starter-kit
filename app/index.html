@@ -1,0 +1,197 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Polymer Starter Kit" />
+  <title>Gustáv Hlaváč</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#303F9F">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Chrome for Android Theme color -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Polymer Starter Kit">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+  <template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel">
+      <div drawer>
+
+        <!-- Drawer Toolbar -->
+        <div class="tall profile">
+          <div class="profile-image top">
+            <img class="sized gray" src="images/me.jpg">
+          </div>
+          <!-- Application name -->
+          <div class="appname paper-font-display1 middle">Gustáv Hlaváč</div>
+          <div class="bottom ">Software engineer</div>
+
+          <div class="socials">
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i> </a>
+          </div>
+        </div>
+
+
+        <!-- Drawer Content -->
+          <paper-menu class="list" attr-for-selected="data-route" selected="{{route}}">
+              <a data-route="home" href="/">
+                <iron-icon icon="home"></iron-icon>
+                <span>Profile</span>
+              </a>
+
+              <a data-route="skills" href="/skills">
+                <iron-icon icon="group-work"></iron-icon>
+                <span>Skills</span>
+              </a>
+
+            <a data-route="about" href="/about-me">
+              <iron-icon icon="face"></iron-icon>
+              <span>Hobbies</span>
+            </a>
+              <a data-route="contact" href="/contact">
+                <iron-icon icon="mail"></iron-icon>
+                <span>Contact</span>
+              </a>
+          </paper-menu>
+      </div>
+
+      <paper-header-panel main mode="waterfall-tall">
+        <paper-toolbar class="tall animate" id="mainToolbar">
+        <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="middle title"><h1>{{name}}</h1></div>
+        </paper-toolbar>
+        <!-- Main Content -->
+          <iron-pages  attr-for-selected="data-route" selected="{{route}}">
+
+            <!-- Main Content HOME-->
+            <section data-route="home" class="home">
+
+              <div class="homeBg"><img src="images/img.jpg"></div>
+              <div class="home-container">
+                <paper-icon-button id="paperToggle1" icon="menu" paper-drawer-toggle></paper-icon-button>
+                  <h1>Gustáv Hlaváč</h1>
+                <div class="profile-details">
+                  <blockquote>
+                    <div class="p-text">
+                      <iron-icon icon="local-phone"></iron-icon><span>+421 / 908 455 932</span>
+                    </div>
+                  </blockquote>
+                  <blockquote class="ng-scope">
+                    <div class="p-text">
+                      <iron-icon icon="mail"></iron-icon> <span>gustav.hlavac@gmail.com</span>
+                    </div>
+                  </blockquote>
+                  <blockquote class="ng-scope">
+                    <div class="p-text">
+                      <iron-icon icon="place"></iron-icon><span>Fláviovská 1046/31, Bratislava-Rusovce</span>
+                    </div>
+                  </blockquote>
+                </div>
+              </div>
+
+            </section>
+
+            <!-- Main Content SKILLS-->
+            <section data-route="skills" class="layout horizontal center">
+              <div class="pulse" style="width:150px;">Hello world!</div>
+
+            </section>
+
+            <!-- Main Content ABOUT-->
+            <section data-route="about">
+
+              <paper-material elevation="2">
+               <fade-out-animation>
+                  <p class="flow-text">Hello! I'm  Application Developer based in Cadca ...</p>
+                  </fade-out-animation>
+              </paper-material>
+            </section>
+
+            <!-- Main Content CONTACT-->
+            <section data-route="contact">
+              <paper-material elevation="1">
+                <div class="container layout center">
+                  <h2 class="paper-font-display2">Contact me</h2>
+                  <h5>Please feel free to send me an email or fill in this handy contact form. I look forward to hearing from you!</h5>
+                  <contact-form></contact-form>
+                </div>
+              </paper-material>
+
+            </section>
+
+          </iron-pages>
+          </paper-header-panel>
+    </paper-drawer-panel>
+
+    <paper-toast id="caching-complete"
+                 duration="6000"
+                 text="Caching complete! This app will work offline.">
+    </paper-toast>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="networkFirst"
+                         precache-file="precache.json">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+
+  <!-- endbuild-->
+</body>
+
+</html>
